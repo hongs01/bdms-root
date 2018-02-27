@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="main-persistence"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- 
+			TODO：如果实体类在web项目下面，我们不需要去在这个位置声明Class，如果实体在非web项目下面，这里要声明实体类！
+			求待解决的方法
+		 -->
+		<class>com.bdms.auth.pojo.Account</class>
+		<class>com.bdms.auth.pojo.Role</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			
+			<!-- 市局 
+			<property name="hibernate.connection.url"
+				value="jdbc:mysql://10.15.8.58:3306/bdms?useUnicode=true&amp;characterEncoding=utf-8" />
+				-->
+			<!-- 开发环境 -->
+			<!-- --> <property name="hibernate.connection.url"
+				value="jdbc:mysql://192.168.7.186:3306/bdms?useUnicode=true&amp;characterEncoding=utf-8" />
+				
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.spi.RegionFactory" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="10" />
+			<property name="connection.autoReconnect" value="true" />
+			<property name="connection.autoReconnectForPools" value="true" />
+			<property name="connection.is-connection-validation-required"
+				value="true" />
+			<!-- 自动把实体类与属性映射成数据库中的表与列 -->
+			<property name="hibernate.hbm2ddl.auto" value="update"/> 
+		</properties>
+	</persistence-unit>
+</persistence>

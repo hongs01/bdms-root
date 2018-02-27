@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.1 http://maven.apache.org/xsd/assembly-1.1.1.xsd"  
+>  
+    <formats>  
+        <format>tar.gz</format>  
+        <!-- format>tar.gz</format -->  
+        <!-- format>dir</format -->  
+    </formats>  
+    
+    <dependencySets>  
+    
+        <dependencySet>  
+             <!-- unpack the webapp as root application --> 
+              
+             <scope>runtime</scope>  
+             <unpack>false</unpack>
+             <outputDirectory>lib</outputDirectory> 
+             <useProjectArtifact>true</useProjectArtifact>
+             <fileMode>666</fileMode> 
+        </dependencySet>  
+        
+    </dependencySets>  
+    
+    <fileSets>  
+    
+        <fileSet>  
+            <directory>src/test/java</directory>  
+            <outputDirectory>src/test/java/</outputDirectory>  
+            <filtered>true</filtered>  
+        </fileSet>  
+        
+         <fileSet>  
+            <directory>src/main/java</directory>  
+            <outputDirectory>src/main/java/</outputDirectory>  
+            <filtered>true</filtered>  
+        </fileSet>  
+        
+        <fileSet>  
+            <directory>src/main/resources</directory>  
+            <outputDirectory>/</outputDirectory>  
+            <filtered>true</filtered>  
+        </fileSet>  
+       
+       
+        <fileSet>  
+            <directory>src/main/bin</directory>  
+            <outputDirectory>bin/</outputDirectory>  
+            <includes>  
+                <include>*.sh</include>  
+            </includes>  
+            <fileMode>0755</fileMode>  
+        </fileSet>  
+        
+    </fileSets>  
+    
+</assembly>  

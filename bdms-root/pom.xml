@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.ds.bdms</groupId>
+  <artifactId>bdms-root</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <distributionManagement>
+    <site>
+      <id>website</id>
+      <url>scp://webhost.company.com/www/website</url>
+    </site>
+  </distributionManagement>
+<build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+</build>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+  	<dependency>
+		<groupId>javax</groupId>
+		<artifactId>javaee-api</artifactId>
+		<version>7.0</version>
+		<scope>provided</scope>
+   </dependency>
+   
+    <dependency>
+		<groupId>jdk.tools</groupId>
+		<artifactId>jdk.tools</artifactId>
+		<version>1.7</version>
+		<scope>system</scope>
+		<systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
+	</dependency>
+	
+   <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.2</version>
+   </dependency>
+   
+   <dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.11</version>
+		<scope>test</scope>
+	</dependency>
+	
+	
+  </dependencies>
+  <modules>
+  	<module>bdms-core</module>
+  	<module>bdms-giraph</module>
+  	<module>bdms-common</module>
+  	<module>bdms-gora</module>
+    <module>bdms-web</module>
+    <module>bdms-hive</module>
+    <module>bdms-sqoop</module>
+    <module>bdms-auth</module>
+    <module>bdms-dev</module>
+    <module>bdms-kafka</module>
+    <module>bdms-storm</module>
+    <module>bdms-memcache</module>
+    <module>bdms-spark</module>
+    <module>bdms-solr</module>
+    <module>bdms-hbase</module>
+    <module>bdms-redis</module>
+    <module>bdms-dams</module>
+    <module>bdms-ftp</module>
+    <module>bdms-entity</module>
+    <module>bdms-flume</module>
+  </modules>
+</project>

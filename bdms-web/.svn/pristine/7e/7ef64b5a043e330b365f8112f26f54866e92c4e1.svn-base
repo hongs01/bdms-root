@@ -1,0 +1,94 @@
+@CHARSET "UTF-8";
+.only-body-background
+{
+	background-color:white;
+}
+.west-body-background
+	{
+		background-color:white;
+		overflow:hidden
+	}
+.east-body-background
+	{
+		background-color:white;
+		overflow-x:hidden
+	}
+.font-family-color
+	{
+		color:black；
+		font-family: '微软雅黑';
+	}
+.just-font
+	{
+		color:black；
+	}
+#lineStatInfo
+{
+	width: 100%;
+	color: #000;
+	font-size: 35px;
+	pading-right:5px;
+	text-align: center;
+	font-family: '微软雅黑';
+	font-weight: bold;
+	color:black;
+	height:80px;
+	line-height:80px;
+}
+
+#updatetime {
+	/* background: url("../images/timeupdate.png") no-repeat;
+	width:320px; 
+	height:40px;*/
+	vertical-align:middle;
+	font-size:18px;
+	text-align:center;
+	line-height:32px;
+	font-family: '微软雅黑';
+	color:black
+}
+.update-time-div
+{
+	width:420px; float:left;padding-left:5px;font-size:16px
+}
+
+.date-span
+{
+	font-family: '微软雅黑';
+	margin-left:0px;
+	font-weight:bold;
+	font-size:13px;
+	color:black
+}
+
+.east-div
+{
+	background-color:white;overflow-x:hidden
+}
+
+.date-checkbox
+{
+	margin-top:-30px;
+	background:#ddd;
+	border:0;
+	color:black;
+	font-weight:bold;
+	padding: 0.5em 1em 0.5em 1em;
+	margin-left:0px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	width:115px
+}
+
+.area-div
+{
+	font-family: '微软雅黑';
+	width: 45px;
+	margin-left:0px;
+	font-weight:bold;
+	font-size:13px;
+	color:black;
+	float:left
+}

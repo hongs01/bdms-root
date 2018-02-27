@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache"  
+    xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+    xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+		http://www.springframework.org/schema/cache 
+        http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
+        http://www.springframework.org/schema/data/jpa
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/task  
+		http://www.springframework.org/schema/task/spring-task-3.2.xsd"
+		
+		default-autowire="byName">
+	<description>spring核心配置文件</description>
+
+<!-- 扫描定时任务所在的包 -->	
+<task:annotation-driven/>
+<context:annotation-config />
+
+<!-- 自动扫描包 -->	
+<context:component-scan base-package="com.bdms">
+	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+</context:component-scan>
+
+<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+	<property name="persistenceUnitName" value="main-persistence"/>
+	<property name="packagesToScan" value="com.bdms.auth.pojo"/>
+	<property name="jpaVendorAdapter">
+		<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>
+	</property>
+</bean>
+
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+     <property name="entityManagerFactory" ref="entityManagerFactory" />
+</bean>
+
+<!-- 事物管理 -->
+<tx:annotation-driven transaction-manager="transactionManager"/>
+<jpa:repositories base-package="com.bdms"
+ entity-manager-factory-ref="entityManagerFactory"
+ transaction-manager-ref="transactionManager">
+ </jpa:repositories>
+ 
+ 
+ <!-- 依赖注入 
+ <bean id="sqoop2DBDao" class="com.bdms.web.demo.dao.SQOOP2DBDaoImpl" >
+ </bean> 
+ <bean id="dbServer" class="org.bdms.sqoop.server.dbserver.DBServer" >
+ </bean> 
+ <bean id="dbService" class="com.bdms.web.demo.service.SQOOP2DBServiceImpl" >
+ </bean> 
+ <bean id="clusterService" class="com.bdms.web.demo.service.SQOOP2ClusterServiceImpl" >
+ </bean> 
+ 
+ <bean id="clusterDao" class="com.bdms.web.demo.dao.SQOOP2ClusterDaoImpl" >
+ </bean> 
+ -->
+ 
+</beans>

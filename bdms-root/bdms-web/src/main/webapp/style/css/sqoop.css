@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+body{
+	overflow: hidden;
+}
+.head,#cc{
+	margin: 0 auto;
+	font-family: "微软雅黑", "宋体", "经典圆体简";
+}
+#cc{
+	margin-top: 10px;
+}
+.head{
+	padding-top:90px; 
+}
+.logo ul li{
+	float: left;
+	width: 40%;
+}
+#tname div {
+	text-align: left;
+}
+
+.systitle{
+    font-size: 3em;
+	font-weight: bold;
+	text-align: center;
+}
+.main{
+	font-weight: bold;
+	font-size: 1.4em;
+	margin-top: 4px;
+	overflow: hidden;
+}
+.detail{
+	font-weight:normal;
+	text-indent: 2em;
+	color: #C6C6C6;
+}
+#centent{
+	width: 980px;
+	text-align: center;
+}
+#begin{
+	margin-top: 100px;
+}
+.db_list tr td{
+	font-size:1.2em;
+	padding: 10px 0 0 20px;
+}
+#db_info input{
+	border: 1px solid #C6C6C6;
+}
+
+.footer{
+	width: 980px;
+	text-align: center;
+	margin-top: 10px;
+}
+#table_info,#column_info{
+	border-collapse:collapse;
+}
+#table_info td,#column_info td{
+	border:solid 1px #C6C6C6;
+}
+#table_info th,#column_info th{
+	border:solid 1px #C6C6C6;
+	font-size:1.4em;
+	background-color: #F4F4F4;
+	color:#0E2D5F;
+	text-align: center;
+}
+#table_info,#column_info{
+	padding: 10px 0 0 20px;
+}
+
+.tableName div,.columnName div{
+	width: 240px;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+

@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ds.bdms</groupId>
+    <artifactId>bdms-root</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>bdms-core</artifactId>
+  <name>bdms-core</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    
+    <!-- servlet-api -->
+  	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>3.0-alpha-1</version>
+		<scope>provided</scope>
+	</dependency>
+    
+    
+    <!-- spring mvc -->
+    <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.0.5.RELEASE</version>
+     </dependency>
+     
+    <!-- spring orm --> 
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>4.0.5.RELEASE</version>
+	</dependency>
+	
+	<!-- spring test -->	
+	<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.0.5.RELEASE</version>
+	</dependency>
+    
+    <!-- hibernate -->
+    <dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>4.3.6.Final</version>
+	</dependency>
+    
+    <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.6.Final</version>
+     </dependency>
+    
+    
+    
+    <!-- spring data solr -->
+    <dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-solr</artifactId>
+			<version>1.4.0.RELEASE</version>
+	</dependency>
+    
+    <dependency>
+	        <groupId>org.springframework.data</groupId>
+	        <artifactId>spring-data-hadoop</artifactId>
+	        <version>2.0.4.RELEASE</version>
+	        <exclusions>
+	        	<exclusion>
+	        		<groupId>tomcat</groupId>
+      				<artifactId>jasper-runtime</artifactId>
+	        	</exclusion>
+	        	
+	        	<exclusion>
+	        		 <groupId>javax.servlet.jsp</groupId>
+      				 <artifactId>jsp-api</artifactId>
+	        	</exclusion>
+	        	
+	        	<exclusion>
+	        		<groupId>org.apache.hadoop</groupId>
+      				<artifactId>hadoop-mapreduce-client-jobclient</artifactId>
+	        	</exclusion>
+	        </exclusions>	
+    	</dependency>
+    
+    <dependency>
+  	
+		<groupId>org.apache.hbase</groupId>
+		<artifactId>hbase-client</artifactId>
+		<version>0.98.4-hadoop2</version>
+	</dependency>
+    
+    <!-- spring data -->
+   <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-jpa</artifactId>
+        <version>1.7.2.RELEASE</version>
+    </dependency>
+    
+    <!-- mysql -->
+   	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.18</version>
+	</dependency>
+    
+    <!-- hive jdbc -->
+    <dependency>
+		<groupId>org.apache.hive</groupId>
+		<artifactId>hive-jdbc</artifactId>
+		<version>1.2.0</version>
+	</dependency>
+    
+    <!-- websocket -->
+    <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-websocket</artifactId>
+		<version>4.0.5.RELEASE</version>
+		<exclusions>
+			<exclusion>
+			<groupId>javax.servlet</groupId>
+      		<artifactId>javax.servlet-api</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+    
+    <!-- Quart -->
+    <dependency>
+		<groupId>org.quartz-scheduler</groupId>
+		<artifactId>quartz</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+    
+    <!-- shrio -->
+    <dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-all</artifactId>
+		<version>1.2.3</version>
+	</dependency>
+    
+    <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-messaging</artifactId>
+		<version>4.0.5.RELEASE</version>
+	</dependency>
+	
+    <dependency>
+    	<groupId>com.ds.bdms</groupId>
+   		 <artifactId>bdms-common</artifactId>
+    	<version>${project.version}</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>com.ds.bdms</groupId>
+   		 <artifactId>bdms-entity</artifactId>
+    	<version>${project.version}</version>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,22 @@
+body{ 
+font-size:18px;
+text-align:30%;
+} 
+table{ 
+border-collapse:collapse; 
+} 
+li{ 
+list-style:none; 
+border:1px solid; 
+width:20px; 
+height:20px; 
+text-align:center; 
+margin:5px; 
+padding:2px; 
+float:left; 
+cursor:pointer; 
+}
+#dataDisplay{
+	margin-left:30%;
+	margin-top:20px;
+}

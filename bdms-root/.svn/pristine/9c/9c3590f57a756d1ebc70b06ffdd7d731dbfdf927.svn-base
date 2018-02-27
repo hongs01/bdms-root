@@ -1,0 +1,4 @@
+#sqoop服务地址, like  http://192.168.10.240:12000/sqoop/
+sqoop.server.url=http://hadoop-5:12000/sqoop/
+#最大的的安全连接数   默认为0
+security.maxConnections=10

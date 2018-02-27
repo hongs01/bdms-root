@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/hadoop/hadoop.properties=UTF-8
+encoding//src/main/resources/hbase/hbase-server-config.properties=UTF-8
+encoding//src/main/resources/spark/spark-server-config.properties=UTF-8
+encoding//src/test/java=UTF-8
+separateDerivedEncodings=true

@@ -1,0 +1,195 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+	<parent>
+    <groupId>com.ds.bdms</groupId>
+    <artifactId>bdms-root</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+ 
+  <artifactId>bdms-ftp</artifactId>
+  <packaging>jar</packaging>
+  <name>bdms-ftp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+   
+   <dependency>
+	<groupId>org.json</groupId>
+	<artifactId>json</artifactId>
+	<version>20160212</version>
+</dependency>
+   
+   
+   <dependency>
+	<groupId>com.hynnet</groupId>
+	<artifactId>sqljdbc-chs</artifactId>
+	<version>4.0.2206.100</version>
+</dependency>
+   
+    <dependency>  
+         <groupId>org.apache.hadoop</groupId>  
+         <artifactId>hadoop-common</artifactId>  
+         <version>2.6.0</version>  
+     </dependency>  
+    
+     <dependency>  
+         <groupId>org.apache.hadoop</groupId>  
+         <artifactId>hadoop-hdfs</artifactId>  
+         <version>2.6.0</version>  
+     </dependency>  
+    
+     <dependency>  
+         <groupId>org.apache.mina</groupId>  
+         <artifactId>mina-core</artifactId>  
+         <version>2.0.0-M2</version>  
+     </dependency> 
+    
+     <dependency>
+         <groupId>org.apache.ftpserver</groupId>
+         <artifactId>ftplet-api</artifactId>
+         <version>1.0.0-M3</version>
+     </dependency>
+    
+     <dependency>
+         <groupId>org.apache.ftpserver</groupId>
+         <artifactId>ftpserver-core</artifactId>
+         <version>1.0.0-M3</version>
+     </dependency>
+     
+     <dependency>
+         <groupId>log4j</groupId>
+         <artifactId>log4j</artifactId>
+         <version>1.2.17</version>
+     </dependency>
+   	<dependency>
+    	<groupId>com.ds.bdms</groupId>
+   		 <artifactId>bdms-core</artifactId>
+    	<version>${project.version}</version>
+   	</dependency>
+    
+    
+    
+  </dependencies>
+  
+      <build>
+    	 <sourceDirectory>src/main/java/</sourceDirectory>
+    	   <testSourceDirectory>src/test/java/</testSourceDirectory>
+    	  <plugins>
+           <plugin>
+      <artifactId>maven-eclipse-plugin</artifactId>
+      <configuration>
+        <downloadsources>true</downloadsources>
+        <buildcommands>
+          <buildcommand>org.scala-ide.sdt.core.scalabuilder</buildcommand>
+        </buildcommands>
+        <projectnatures>
+          <projectnature>org.scala-ide.sdt.core.scalanature</projectnature>
+          <projectnature>org.eclipse.jdt.core.javanature</projectnature>
+        </projectnatures>
+        <classpathcontainers>
+          <classpathcontainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathcontainer>
+          <classpathcontainer>org.scala-ide.sdt.launching.SCALA_CONTAINER</classpathcontainer>
+        </classpathcontainers>
+        <sourceincludes>
+          <sourceinclude>**/*.scala</sourceinclude>
+        </sourceincludes>
+      </configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.scala-tools</groupId>
+      <artifactId>maven-scala-plugin</artifactId>
+      <!-- -->
+      <executions>
+        <execution>
+          <goals>
+            <goal>compile</goal>
+            <goal>testCompile</goal>
+          </goals>
+        </execution>
+      </executions>
+       
+    </plugin>
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>build-helper-maven-plugin</artifactId>
+      <!-- -->
+      <executions>
+        <execution>
+          <id>add-source</id>
+          <phase>generate-sources</phase>
+          <goals>
+            <goal>add-source</goal>
+          </goals>
+          <configuration>
+            <sources>
+              <source>src/main/java</source>
+            </sources>
+          </configuration>
+        </execution>
+        <execution>
+          <id>add-test-source</id>
+          <phase>generate-sources</phase>
+          <goals>
+            <goal>add-test-source</goal>
+          </goals>
+          <configuration>
+            <sources>
+              <source>src/test/java</source>
+            </sources>
+          </configuration>
+        </execution>
+      </executions>
+       
+    </plugin>
+		            
+            
+        
+          <plugin>  
+    <groupId>org.apache.maven.plugins</groupId>  
+    <artifactId>maven-shade-plugin</artifactId>  
+    <version> 2.2</version>  
+    <executions>  
+        <execution>  
+            <phase>package</phase>  
+            <goals>  
+                <goal>shade</goal>  
+            </goals>  
+            <configuration>  
+                <transformers>  
+                    <transformer  
+                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
+                        <resource>META-INF/spring.handlers</resource>  
+                    </transformer>  
+                    <transformer  
+                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
+                        <resource>META-INF/spring.schemas</resource>  
+                    </transformer>  
+                    <transformer  
+                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">  
+                        <mainClass>com.bdms.ftp.mina.MinaFTPClient</mainClass>  
+                    </transformer>  
+                </transformers>  
+            </configuration>  
+        </execution>  
+    </executions>  
+</plugin>
+        </plugins>
+ 	       
+    </build>
+ 
+  
+</project>

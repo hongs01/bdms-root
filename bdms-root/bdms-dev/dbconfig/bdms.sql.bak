@@ -1,0 +1,614 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : 192.168.9.39
+Source Server Version : 50529
+Source Host           : 192.168.9.39:3306
+Source Database       : bdms
+
+Target Server Type    : MYSQL
+Target Server Version : 50529
+File Encoding         : 65001
+
+Date: 2015-07-30 14:24:48
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `account`
+-- ----------------------------
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE `account` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `accountName` varchar(255) DEFAULT NULL,
+  `isActive` bit(1) DEFAULT NULL,
+  `lastUpdateTime` datetime DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `roles` varchar(255) DEFAULT NULL,
+  `version` bigint(20) DEFAULT NULL,
+  `userid` int(11) DEFAULT NULL,
+  `roleNames` varchar(255) DEFAULT NULL,
+  `roleIds` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_eemtigya6ecjvaugout5us2rn` (`userid`),
+  CONSTRAINT `FK_eemtigya6ecjvaugout5us2rn` FOREIGN KEY (`userid`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of account
+-- ----------------------------
+INSERT INTO `account` VALUES ('2', '123456', '', '2015-07-08 11:17:19', '123456', null, '0', null, null, null);
+INSERT INTO `account` VALUES ('3', 'admin', '', '2015-07-08 13:58:58', 'adminghjfgjhfj', null, '0', null, null, null);
+INSERT INTO `account` VALUES ('5', '123456', '', '2015-07-08 13:59:17', '123456sdfasdfsdfsa', null, '0', null, null, null);
+INSERT INTO `account` VALUES ('7', 'aaa', '', '2015-07-08 16:44:01', 'aaaa', null, '0', null, null, null);
+INSERT INTO `account` VALUES ('12', '1234567', '', '2015-07-08 17:54:27', '123456sdfasdfsdfsa', null, '0', null, null, null);
+INSERT INTO `account` VALUES ('13', '1234567', '', '2015-07-09 13:14:48', '123456sdfasdfsdfsa', null, '0', null, null, null);
+INSERT INTO `account` VALUES ('20', 'aaa1', '', '2015-07-14 11:44:04', '1231', null, '4', null, null, null);
+INSERT INTO `account` VALUES ('21', '喻小林', '', '2015-07-14 16:26:02', 'aa', null, '0', null, null, null);
+
+-- ----------------------------
+-- Table structure for `accountrole`
+-- ----------------------------
+DROP TABLE IF EXISTS `accountrole`;
+CREATE TABLE `accountrole` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `accountId` int(11) DEFAULT NULL,
+  `roleId` int(11) DEFAULT NULL,
+  `verion` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of accountrole
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `demo`
+-- ----------------------------
+DROP TABLE IF EXISTS `demo`;
+CREATE TABLE `demo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `info` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of demo
+-- ----------------------------
+INSERT INTO `demo` VALUES ('1', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('2', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('3', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('4', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('5', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('6', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('7', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('8', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('9', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('10', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('11', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('12', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('13', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('14', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('15', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('16', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('17', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('18', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('19', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('20', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('21', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('22', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('23', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('24', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('25', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('26', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('27', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('28', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('29', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('30', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('31', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('32', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('33', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('34', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('35', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('36', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('37', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('38', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('39', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('40', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('41', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('42', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('43', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('44', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('45', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('46', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('47', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('48', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('49', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('50', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('51', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('52', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('53', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('54', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('55', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('56', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('57', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('58', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('59', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('60', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('61', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('62', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('63', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('64', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('65', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('66', 'demo测试信息', 'demo的Name');
+INSERT INTO `demo` VALUES ('67', 'demo测试信息', 'demo的Name');
+
+-- ----------------------------
+-- Table structure for `permission`
+-- ----------------------------
+DROP TABLE IF EXISTS `permission`;
+CREATE TABLE `permission` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `module` varchar(255) DEFAULT NULL,
+  `operation` varchar(255) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `resource` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of permission
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `role`
+-- ----------------------------
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE `role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `roleId` int(11) DEFAULT NULL,
+  `roleName` varchar(255) DEFAULT NULL,
+  `verion` bigint(20) DEFAULT NULL,
+  `accountId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_o75h0sfmp7n01by87nhk3g0o2` (`accountId`),
+  CONSTRAINT `FK_o75h0sfmp7n01by87nhk3g0o2` FOREIGN KEY (`accountId`) REFERENCES `account` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of role
+-- ----------------------------
+INSERT INTO `role` VALUES ('1', null, '管理员', '0', null);
+INSERT INTO `role` VALUES ('2', null, '普通会员', '0', null);
+
+-- ----------------------------
+-- Table structure for `station`
+-- ----------------------------
+DROP TABLE IF EXISTS `station`;
+CREATE TABLE `station` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `version` varchar(20) NOT NULL,
+  `line` varchar(20) NOT NULL,
+  `station` varchar(20) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `ename` varchar(20) NOT NULL,
+  `x` decimal(10,3) DEFAULT NULL,
+  `y` decimal(10,3) DEFAULT NULL,
+  `transferSt` varchar(20) NOT NULL,
+  `level` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=394 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of station
+-- ----------------------------
+INSERT INTO `station` VALUES ('1', '920', '01', '0111', '莘庄', 'Xinzhuang', '0.000', '0.000', '0030', '500,1000,1500');
+INSERT INTO `station` VALUES ('2', '920', '01', '0112', '外环路', 'Waihuanlu', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('3', '920', '01', '0113', '莲花路', 'Lianhua Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('4', '920', '01', '0114', '锦江乐园', 'Jinjiang Park', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('5', '920', '01', '0115', '上海南站', 'Shanghai South Railw', '0.000', '0.000', '0002', '500,1000,1500');
+INSERT INTO `station` VALUES ('6', '920', '01', '0116', '漕宝路', 'Caobao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('7', '920', '01', '0117', '上海体育馆', 'Shanghai Indoor Stad', '0.000', '0.000', '0001', '500,1000,1500');
+INSERT INTO `station` VALUES ('8', '920', '01', '0118', '徐家汇', 'Xujiahui', '0.000', '0.000', '0020', '500,1000,1500');
+INSERT INTO `station` VALUES ('9', '920', '01', '0119', '衡山路', 'Hengshan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('10', '920', '01', '0120', '常熟路', 'Changshu Road', '0.000', '0.000', '0018', '500,1000,1500');
+INSERT INTO `station` VALUES ('11', '920', '01', '0121', '陕西南路', 'South Shanxi Road', '0.000', '0.000', '0041', '500,1000,1500');
+INSERT INTO `station` VALUES ('12', '920', '01', '0122', '黄陂南路', 'South Huangpi Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('13', '920', '01', '0123', '人民广场', 'People Square', '0.000', '0.000', '0010', '500,1000,1500');
+INSERT INTO `station` VALUES ('14', '920', '01', '0124', '新闸路', 'Xinzha Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('15', '920', '01', '0125', '汉中路', 'Hanzhong Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('16', '920', '01', '0126', '上海火车站', 'Shanghai Railway Sta', '0.000', '0.000', '0003', '500,1000,1500');
+INSERT INTO `station` VALUES ('17', '920', '01', '0127', '中山北路', 'North Zhongshan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('18', '920', '01', '0128', '延长路', 'Yanchang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('19', '920', '01', '0129', '上海马戏城', 'Shanghai Circus Worl', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('20', '920', '01', '0130', '汶水路', 'Wenshui Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('21', '920', '01', '0131', '彭浦新村', 'Pengpu Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('22', '920', '01', '0132', '共康路', 'Gongkang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('23', '920', '01', '0133', '通河新村', 'Tonghe Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('24', '920', '01', '0134', '呼兰路', 'Hulan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('25', '920', '01', '0135', '共富新村', 'Gongfu Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('26', '920', '01', '0136', '宝安公路', 'BaoAn Highway', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('27', '920', '01', '0137', '友谊西路', 'West Youyi Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('28', '920', '01', '0138', '富锦路', 'Fujin Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('29', '920', '02', '0234', '徐泾东', 'East Xujin', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('30', '920', '02', '0235', '虹桥火车站', 'Hongqiao Railway Sta', '0.000', '0.000', '0034', '500,1000,1500');
+INSERT INTO `station` VALUES ('31', '920', '02', '0236', '虹桥2号航站楼', 'Hongqiao Airport Ter', '0.000', '0.000', '0033', '500,1000,1500');
+INSERT INTO `station` VALUES ('32', '920', '02', '0237', '淞虹路', 'Songhong Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('33', '920', '02', '0238', '北新泾', 'Beixinjing', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('34', '920', '02', '0239', '威宁路', 'Weining Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('35', '920', '02', '0240', '娄山关路', 'Loushanguan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('36', '920', '02', '0241', '中山公园', 'Zhongshan Park', '0.000', '0.000', '0007', '500,1000,1500');
+INSERT INTO `station` VALUES ('37', '920', '02', '0242', '江苏路', 'Jiangsu Road', '0.000', '0.000', '0023', '500,1000,1500');
+INSERT INTO `station` VALUES ('38', '920', '02', '0243', '静安寺', 'JingAn Temple', '0.000', '0.000', '0043', '500,1000,1500');
+INSERT INTO `station` VALUES ('39', '920', '02', '0244', '南京西路', 'West Nanjing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('40', '920', '02', '0245', '人民广场', 'People Square', '0.000', '0.000', '0010', '500,1000,1500');
+INSERT INTO `station` VALUES ('41', '920', '02', '0246', '南京东路', 'East Nanjing Road', '0.000', '0.000', '0011', '500,1000,1500');
+INSERT INTO `station` VALUES ('42', '920', '02', '0247', '陆家嘴', 'Lujiazui', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('43', '920', '02', '0248', '东昌路', 'Dongchang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('44', '920', '02', '0249', '世纪大道', 'Century Avenue', '0.000', '0.000', '0004', '500,1000,1500');
+INSERT INTO `station` VALUES ('45', '920', '02', '0250', '上海科技馆', 'Shanghai ST Museum', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('46', '920', '02', '0251', '世纪公园', 'Century Park', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('47', '920', '02', '0252', '龙阳路', 'Longyang Road', '0.000', '0.000', '0045', '500,1000,1500');
+INSERT INTO `station` VALUES ('48', '920', '02', '0253', '张江高科', 'Zhangjiang High Tech', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('49', '920', '02', '0254', '金科路', 'Jinke Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('50', '920', '02', '0255', '广兰路', 'Guanglan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('51', '920', '02', '0256', '唐镇', 'Tangzhen', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('52', '920', '02', '0257', '创新中路', 'Middle Chuangxin Roa', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('53', '920', '02', '0258', '华夏东路', 'East Huaxia Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('54', '920', '02', '0259', '川沙', 'Chuansha', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('55', '920', '02', '0260', '凌空路', 'Lingkong Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('56', '920', '02', '0261', '远东大道', 'Yuandong Avenue', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('57', '920', '02', '0262', '海天三路', 'Haitiansan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('58', '920', '02', '0263', '浦东国际机场', 'Pudong International', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('59', '920', '03', '0311', '上海南站', 'Shanghai South Stati', '0.000', '0.000', '0002', '500,1000,1500');
+INSERT INTO `station` VALUES ('60', '920', '03', '0312', '石龙路', 'Shilong Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('61', '920', '03', '0313', '龙漕路', 'Longcao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('62', '920', '03', '0314', '漕溪路', 'Caoxi Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('63', '920', '03', '0315', '宜山路', 'Yishan Road', '0.000', '0.000', '0015', '500,1000,1500');
+INSERT INTO `station` VALUES ('64', '920', '03', '0316', '虹桥路', 'Hongqiao Road', '0.000', '0.000', '0035', '500,1000,1500');
+INSERT INTO `station` VALUES ('65', '920', '03', '0317', '延安西路', 'West YanAn Road', '0.000', '0.000', '0019', '500,1000,1500');
+INSERT INTO `station` VALUES ('66', '920', '03', '0318', '中山公园', 'Zhongshan Park', '0.000', '0.000', '0007', '500,1000,1500');
+INSERT INTO `station` VALUES ('67', '920', '03', '0319', '金沙江路', 'Jinshajiang Road', '0.000', '0.000', '0037', '500,1000,1500');
+INSERT INTO `station` VALUES ('68', '920', '03', '0320', '曹杨路', 'Caoyang Road', '0.000', '0.000', '0022', '500,1000,1500');
+INSERT INTO `station` VALUES ('69', '920', '03', '0321', '镇坪路', 'Zhenping Road', '0.000', '0.000', '0038', '500,1000,1500');
+INSERT INTO `station` VALUES ('70', '920', '03', '0322', '中潭路', 'Zhongtan Road', '0.000', '0.000', '0008', '500,1000,1500');
+INSERT INTO `station` VALUES ('71', '920', '03', '0323', '上海火车站', 'Shanghai Railway Sta', '0.000', '0.000', '0003', '500,1000,1500');
+INSERT INTO `station` VALUES ('72', '920', '03', '0324', '宝山路', 'Baoshan Road', '0.000', '0.000', '0016', '500,1000,1500');
+INSERT INTO `station` VALUES ('73', '920', '03', '0325', '东宝兴路', 'Dongbaoxing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('74', '920', '03', '0326', '虹口足球场', 'Hongkou Football Sta', '0.000', '0.000', '0032', '500,1000,1500');
+INSERT INTO `station` VALUES ('75', '920', '03', '0327', '赤峰路', 'Chifeng Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('76', '920', '03', '0328', '大柏树', 'Dabaishu', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('77', '920', '03', '0329', '江湾镇', 'Jiangwan Town', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('78', '920', '03', '0330', '殷高西路', 'West Yingao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('79', '920', '03', '0331', '长江南路', 'South Changjiang Roa', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('80', '920', '03', '0332', '淞发路', 'Songfa Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('81', '920', '03', '0333', '张华浜', 'Zhanghuabang', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('82', '920', '03', '0334', '淞滨路', 'Songbin Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('83', '920', '03', '0335', '水产路', 'Shuichan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('84', '920', '03', '0336', '宝杨路', 'Baoyang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('85', '920', '03', '0337', '友谊路', 'Youyi Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('86', '920', '03', '0338', '铁力路', 'Tieli Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('87', '920', '03', '0339', '江杨北路', 'North Jiangyang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('88', '920', '04', '0401', '上海体育馆', 'Shanghai Indoor Stad', '0.000', '0.000', '0001', '500,1000,1500');
+INSERT INTO `station` VALUES ('89', '920', '04', '0402', '宜山路', 'Yishan Road', '0.000', '0.000', '0015', '500,1000,1500');
+INSERT INTO `station` VALUES ('90', '920', '04', '0403', '虹桥路', 'Hongqiao Road', '0.000', '0.000', '0035', '500,1000,1500');
+INSERT INTO `station` VALUES ('91', '920', '04', '0404', '延安西路', 'West YanAn Road', '0.000', '0.000', '0019', '500,1000,1500');
+INSERT INTO `station` VALUES ('92', '920', '04', '0405', '中山公园', 'Zhongshan Park', '0.000', '0.000', '0007', '500,1000,1500');
+INSERT INTO `station` VALUES ('93', '920', '04', '0406', '金沙江路', 'Jinshajiang Road', '0.000', '0.000', '0037', '500,1000,1500');
+INSERT INTO `station` VALUES ('94', '920', '04', '0407', '曹杨路', 'Caoyang Road', '0.000', '0.000', '0022', '500,1000,1500');
+INSERT INTO `station` VALUES ('95', '920', '04', '0408', '镇坪路', 'Zhenping Road', '0.000', '0.000', '0038', '500,1000,1500');
+INSERT INTO `station` VALUES ('96', '920', '04', '0409', '中潭路', 'Zhongtan Road', '0.000', '0.000', '0008', '500,1000,1500');
+INSERT INTO `station` VALUES ('97', '920', '04', '0410', '上海火车站', 'Shanghai Railway Sta', '0.000', '0.000', '0003', '500,1000,1500');
+INSERT INTO `station` VALUES ('98', '920', '04', '0411', '宝山路', 'Baoshan Road', '0.000', '0.000', '0016', '500,1000,1500');
+INSERT INTO `station` VALUES ('99', '920', '04', '0412', '海伦路', 'Hailun Road', '0.000', '0.000', '0025', '500,1000,1500');
+INSERT INTO `station` VALUES ('100', '920', '04', '0413', '临平路', 'Linping Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('101', '920', '04', '0414', '大连路', 'Dalian Road', '0.000', '0.000', '0013', '500,1000,1500');
+INSERT INTO `station` VALUES ('102', '920', '04', '0415', '杨树浦路', 'Yangshupu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('103', '920', '04', '0416', '浦东大道', 'Pudong Avenue', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('104', '920', '04', '0417', '世纪大道', 'Century Avenue', '0.000', '0.000', '0004', '500,1000,1500');
+INSERT INTO `station` VALUES ('105', '920', '04', '0418', '浦电路', 'Pudian Road', '0.000', '0.000', '0024', '500,1000,1500');
+INSERT INTO `station` VALUES ('106', '920', '04', '0419', '蓝村路', 'Lancun Road', '0.000', '0.000', '0031', '500,1000,1500');
+INSERT INTO `station` VALUES ('107', '920', '04', '0420', '塘桥', 'Tangqiao', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('108', '920', '04', '0421', '南浦大桥', 'Nanpu Bridge', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('109', '920', '04', '0422', '西藏南路', 'South Xizang Road', '0.000', '0.000', '0036', '500,1000,1500');
+INSERT INTO `station` VALUES ('110', '920', '04', '0423', '鲁班路', 'Luban Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('111', '920', '04', '0424', '大木桥路', 'Damuqiao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('112', '920', '04', '0425', '东安路', 'DongAn Road', '0.000', '0.000', '0005', '500,1000,1500');
+INSERT INTO `station` VALUES ('113', '920', '04', '0426', '上海体育场', 'Shanghai Stadium', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('114', '920', '05', '0501', '莘庄', 'Xinzhuang', '0.000', '0.000', '0030', '500,1000,1500');
+INSERT INTO `station` VALUES ('115', '920', '05', '0502', '春申路', 'Chunshen Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('116', '920', '05', '0503', '银都路', 'Yindu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('117', '920', '05', '0505', '颛桥', 'Zhuanqiao', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('118', '920', '05', '0507', '北桥', 'Beiqiao', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('119', '920', '05', '0508', '剑川路', 'Jianchuan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('120', '920', '05', '0509', '东川路', 'Dongchuan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('121', '920', '05', '0510', '金平路', 'Jinping Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('122', '920', '05', '0511', '华宁路', 'Huaning Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('123', '920', '05', '0512', '文井路', 'Wenjing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('124', '920', '05', '0513', '闵行开发区', 'Minhang Development ', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('125', '920', '06', '0621', '东方体育中心', 'Oriental Sports Cent', '0.000', '0.000', '0006', '500,1000,1500');
+INSERT INTO `station` VALUES ('126', '920', '06', '0622', '灵岩南路', 'South Lingyan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('127', '920', '06', '0623', '上南路', 'Shangnan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('128', '920', '06', '0624', '华夏西路', 'West Huaxia Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('129', '920', '06', '0625', '高青路', 'Gaoqing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('130', '920', '06', '0626', '东明路', 'Dongming Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('131', '920', '06', '0627', '高科西路', 'West Gaoke Road', '0.000', '0.000', '0044', '500,1000,1500');
+INSERT INTO `station` VALUES ('132', '920', '06', '0628', '临沂新村', 'Linyi Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('133', '920', '06', '0629', '上海儿童医学中心', 'Children Medical Cen', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('134', '920', '06', '0630', '蓝村路', 'Lancun Road', '0.000', '0.000', '0031', '500,1000,1500');
+INSERT INTO `station` VALUES ('135', '920', '06', '0631', '浦电路', 'Pudian Road', '0.000', '0.000', '0024', '500,1000,1500');
+INSERT INTO `station` VALUES ('136', '920', '06', '0632', '世纪大道', 'Century Avenue', '0.000', '0.000', '0004', '500,1000,1500');
+INSERT INTO `station` VALUES ('137', '920', '06', '0633', '源深体育中心', 'Yuanshen Stadium', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('138', '920', '06', '0634', '民生路', 'Minsheng Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('139', '920', '06', '0635', '北洋泾路', 'Beiyangjing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('140', '920', '06', '0636', '德平路', 'Deping Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('141', '920', '06', '0637', '云山路', 'Yunshan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('142', '920', '06', '0638', '金桥路', 'Jinqiao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('143', '920', '06', '0639', '博兴路', 'Boxing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('144', '920', '06', '0640', '五莲路', 'Wulian Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('145', '920', '06', '0641', '巨峰路', 'Jufeng Road', '0.000', '0.000', '0017', '500,1000,1500');
+INSERT INTO `station` VALUES ('146', '920', '06', '0642', '东靖路', 'Dongjing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('147', '920', '06', '0643', '五洲大道', 'Wuzhou Avenue', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('148', '920', '06', '0644', '洲海路', 'Zhouhai Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('149', '920', '06', '0645', '外高桥保税区南站', 'South Waigaoqiao Fre', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('150', '920', '06', '0646', '航津路', 'Hangjin Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('151', '920', '06', '0647', '外高桥保税区北站', 'North Waigaoqiao Fre', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('152', '920', '06', '0648', '港城路', 'Gangcheng Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('153', '920', '07', '0721', '美兰湖', 'Meilan Lake', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('154', '920', '07', '0722', '罗南新村', 'Luonan Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('155', '920', '07', '0723', '潘广路', 'Panguang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('156', '920', '07', '0724', '刘行', 'Liuhang', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('157', '920', '07', '0725', '顾村公园', 'Gucun Park', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('158', '920', '07', '0726', '祁华路', 'Qihua Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('159', '920', '07', '0727', '上海大学', 'Shanghai University', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('160', '920', '07', '0728', '南陈路', 'Nanchen Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('161', '920', '07', '0729', '上大路', 'Shangda Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('162', '920', '07', '0730', '场中路', 'Changzhong Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('163', '920', '07', '0731', '大场镇', 'Dachang Town', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('164', '920', '07', '0732', '行知路', 'Xingzhi Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('165', '920', '07', '0733', '大华三路', 'Dahuasan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('166', '920', '07', '0734', '新村路', 'Xincun Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('167', '920', '07', '0735', '岚皋路', 'Langao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('168', '920', '07', '0736', '镇坪路', 'Zhenping Road', '0.000', '0.000', '0038', '500,1000,1500');
+INSERT INTO `station` VALUES ('169', '920', '07', '0737', '长寿路', 'Changshou Road', '0.000', '0.000', '0039', '500,1000,1500');
+INSERT INTO `station` VALUES ('170', '920', '07', '0738', '昌平路', 'Changping Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('171', '920', '07', '0739', '静安寺', 'JingAn Temple', '0.000', '0.000', '0043', '500,1000,1500');
+INSERT INTO `station` VALUES ('172', '920', '07', '0740', '常熟路', 'Changshu Road', '0.000', '0.000', '0018', '500,1000,1500');
+INSERT INTO `station` VALUES ('173', '920', '07', '0741', '肇嘉浜路', 'Zhaojiabang Road', '0.000', '0.000', '0029', '500,1000,1500');
+INSERT INTO `station` VALUES ('174', '920', '07', '0742', '东安路', 'DongAn Road', '0.000', '0.000', '0005', '500,1000,1500');
+INSERT INTO `station` VALUES ('175', '920', '07', '0743', '龙华中路', 'Middle Longhua Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('176', '920', '07', '0744', '后滩', 'Houtan', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('177', '920', '07', '0745', '长清路', 'Changqing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('178', '920', '07', '0746', '耀华路', 'Yaohua Road', '0.000', '0.000', '0027', '500,1000,1500');
+INSERT INTO `station` VALUES ('179', '920', '07', '0747', '云台路', 'Yuntai Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('180', '920', '07', '0748', '高科西路', 'West Gaoke Road', '0.000', '0.000', '0044', '500,1000,1500');
+INSERT INTO `station` VALUES ('181', '920', '07', '0749', '杨高南路', 'South Yanggao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('182', '920', '07', '0750', '锦绣路', 'Jinxiu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('183', '920', '07', '0751', '芳华路', 'Fanghua Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('184', '920', '07', '0752', '龙阳路', 'Longyang Road', '0.000', '0.000', '0045', '500,1000,1500');
+INSERT INTO `station` VALUES ('185', '920', '07', '0753', '花木路', 'Huamu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('186', '920', '08', '0820', '沈杜公路', 'Shendu highway', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('187', '920', '08', '0821', '联航路', 'Lianhang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('188', '920', '08', '0822', '江月路', 'Jiangyue Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('189', '920', '08', '0823', '浦江镇', 'Pujiang Town', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('190', '920', '08', '0824', '芦恒路', 'Luheng Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('191', '920', '08', '0825', '凌兆新村', 'Lingzhao Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('192', '920', '08', '0826', '东方体育中心', 'Oriental Sports Cent', '0.000', '0.000', '0006', '500,1000,1500');
+INSERT INTO `station` VALUES ('193', '920', '08', '0827', '杨思', 'Yangsi', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('194', '920', '08', '0828', '成山路', 'Chengshan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('195', '920', '08', '0829', '耀华路', 'Yaohua Road', '0.000', '0.000', '0027', '500,1000,1500');
+INSERT INTO `station` VALUES ('196', '920', '08', '0830', '中华艺术宫', 'China Art Museum', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('197', '920', '08', '0831', '西藏南路', 'South Xizang Road', '0.000', '0.000', '0036', '500,1000,1500');
+INSERT INTO `station` VALUES ('198', '920', '08', '0832', '陆家浜路', 'Lujiabang Road', '0.000', '0.000', '0040', '500,1000,1500');
+INSERT INTO `station` VALUES ('199', '920', '08', '0833', '老西门', 'Laoximen', '0.000', '0.000', '0028', '500,1000,1500');
+INSERT INTO `station` VALUES ('200', '920', '08', '0834', '大世界', 'Dashijie', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('201', '920', '08', '0835', '人民广场', 'People Square', '0.000', '0.000', '0010', '500,1000,1500');
+INSERT INTO `station` VALUES ('202', '920', '08', '0836', '曲阜路', 'Qufu Road', '0.000', '0.000', '0021', '500,1000,1500');
+INSERT INTO `station` VALUES ('203', '920', '08', '0837', '中兴路', 'Zhongxing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('204', '920', '08', '0838', '西藏北路', 'North Xizang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('205', '920', '08', '0839', '虹口足球场', 'Hongkou Football Sta', '0.000', '0.000', '0032', '500,1000,1500');
+INSERT INTO `station` VALUES ('206', '920', '08', '0840', '曲阳路', 'Quyang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('207', '920', '08', '0841', '四平路', 'Siping Road', '0.000', '0.000', '0012', '500,1000,1500');
+INSERT INTO `station` VALUES ('208', '920', '08', '0842', '鞍山新村', 'Anshan Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('209', '920', '08', '0843', '江浦路', 'Jiangpu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('210', '920', '08', '0844', '黄兴路', 'Huangxing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('211', '920', '08', '0845', '延吉中路', 'Middle Yanji Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('212', '920', '08', '0846', '黄兴公园', 'Huangxing Park', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('213', '920', '08', '0847', '翔殷路', 'Xiangyin Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('214', '920', '08', '0848', '嫩江路', 'Nenjiang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('215', '920', '08', '0849', '市光路', 'Shiguang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('216', '920', '09', '0918', '松江南站', 'Songjiang South Rail', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('217', '920', '09', '0919', '醉白池', 'Zuibaichi Park', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('218', '920', '09', '0920', '松江体育中心', 'Songjiang Sports Cen', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('219', '920', '09', '0921', '松江新城', 'Songjiang Xincheng', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('220', '920', '09', '0922', '松江大学城', 'Songjiang University', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('221', '920', '09', '0923', '洞泾', 'Dongjing', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('222', '920', '09', '0924', '佘山', 'Sheshan', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('223', '920', '09', '0925', '泗泾', 'Sijing', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('224', '920', '09', '0926', '九亭', 'Jiuting', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('225', '920', '09', '0927', '中春路', 'Zhongchun Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('226', '920', '09', '0928', '七宝', 'Qibao', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('227', '920', '09', '0929', '星中路', 'Xingzhong Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('228', '920', '09', '0930', '合川路', 'Hechuan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('229', '920', '09', '0931', '漕河泾开发区', 'Caohejing Hi-Teach P', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('230', '920', '09', '0932', '桂林路', 'Guilin Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('231', '920', '09', '0933', '宜山路', 'Yishan Road', '0.000', '0.000', '0015', '500,1000,1500');
+INSERT INTO `station` VALUES ('232', '920', '09', '0934', '徐家汇', 'Xujiahui', '0.000', '0.000', '0020', '500,1000,1500');
+INSERT INTO `station` VALUES ('233', '920', '09', '0935', '肇嘉浜路', 'Zhaojiabang Road', '0.000', '0.000', '0029', '500,1000,1500');
+INSERT INTO `station` VALUES ('234', '920', '09', '0936', '嘉善路', 'Jiashan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('235', '920', '09', '0937', '打浦桥', 'Dapuqiao', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('236', '920', '09', '0938', '马当路', 'Madang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('237', '920', '09', '0939', '陆家浜路', 'Lujiabang Road', '0.000', '0.000', '0040', '500,1000,1500');
+INSERT INTO `station` VALUES ('238', '920', '09', '0940', '小南门', 'Xiaonanmen', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('239', '920', '09', '0941', '商城路', 'Shangcheng Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('240', '920', '09', '0942', '世纪大道', 'Century Avenue', '0.000', '0.000', '0004', '500,1000,1500');
+INSERT INTO `station` VALUES ('241', '920', '09', '0943', '杨高中路', 'Middle Yanggao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('242', '920', '10', '1018', '航中路', 'Hangzhong Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('243', '920', '10', '1019', '紫藤路', 'Ziteng Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('244', '920', '10', '1020', '龙柏新村', 'LongBai Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('245', '920', '10', '1041', '虹桥火车站', 'Hongqiao Railway Sta', '0.000', '0.000', '0034', '500,1000,1500');
+INSERT INTO `station` VALUES ('246', '920', '10', '1042', '虹桥2号航站楼', 'Hongqiao Airport Ter', '0.000', '0.000', '0033', '500,1000,1500');
+INSERT INTO `station` VALUES ('247', '920', '10', '1043', '虹桥1号航站楼', 'Hongqiao Airport Ter', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('248', '920', '10', '1044', '上海动物园', 'ShanghaiZoo', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('249', '920', '10', '1045', '龙溪路', 'Longxi Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('250', '920', '10', '1046', '水城路', 'Shuicheng Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('251', '920', '10', '1047', '伊犁路', 'Yili Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('252', '920', '10', '1048', '宋园路', 'Songyuan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('253', '920', '10', '1049', '虹桥路', 'Hongqiao Road', '0.000', '0.000', '0035', '500,1000,1500');
+INSERT INTO `station` VALUES ('254', '920', '10', '1050', '交通大学', 'Jiaotong university', '0.000', '0.000', '0009', '500,1000,1500');
+INSERT INTO `station` VALUES ('255', '920', '10', '1051', '上海图书馆', 'Shanghai Library', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('256', '920', '10', '1052', '陕西南路', 'South Shanxi Road', '0.000', '0.000', '0041', '500,1000,1500');
+INSERT INTO `station` VALUES ('257', '920', '10', '1053', '新天地', 'Xintiandi', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('258', '920', '10', '1054', '老西门', 'Laoximen', '0.000', '0.000', '0028', '500,1000,1500');
+INSERT INTO `station` VALUES ('259', '920', '10', '1055', '豫园', 'Yuyuan Garden', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('260', '920', '10', '1056', '南京东路', 'East Nanjing Road', '0.000', '0.000', '0011', '500,1000,1500');
+INSERT INTO `station` VALUES ('261', '920', '10', '1057', '天潼路', 'Tiantong Road', '0.000', '0.000', '0014', '500,1000,1500');
+INSERT INTO `station` VALUES ('262', '920', '10', '1058', '四川北路', 'North Sichuan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('263', '920', '10', '1059', '海伦路', 'HaiLun Road', '0.000', '0.000', '0025', '500,1000,1500');
+INSERT INTO `station` VALUES ('264', '920', '10', '1060', '邮电新村', 'Youdian Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('265', '920', '10', '1061', '四平路', 'Siping Road', '0.000', '0.000', '0012', '500,1000,1500');
+INSERT INTO `station` VALUES ('266', '920', '10', '1062', '同济大学', 'Tongji University', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('267', '920', '10', '1063', '国权路', 'Guoquan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('268', '920', '10', '1064', '五角场', 'Wujiaochang', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('269', '920', '10', '1065', '江湾体育场', 'Jiangwan Stadium', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('270', '920', '10', '1066', '三门路', 'Sanmen Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('271', '920', '10', '1067', '殷高东路', 'East Yingao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('272', '920', '10', '1068', '新江湾城', 'Xinjiangwancheng', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('273', '920', '11', '1114', '花桥', 'Huaqiao', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('274', '920', '11', '1115', '光明路', 'Guangming Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('275', '920', '11', '1116', '兆丰路', 'Zhaofeng Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('276', '920', '11', '1117', '安亭', 'Anting', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('277', '920', '11', '1118', '上海汽车城', 'Shanghai Automobile ', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('278', '920', '11', '1119', '昌吉东路', 'East Changji Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('279', '920', '11', '1120', '上海赛车场', 'Shanghai Circuit', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('280', '920', '11', '1131', '嘉定北', 'North Jiading', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('281', '920', '11', '1132', '嘉定西', 'West Jiading', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('282', '920', '11', '1133', '白银路', 'Baiyin Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('283', '920', '11', '1134', '嘉定新城', 'Jiading Xincheng', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('284', '920', '11', '1135', '马陆', 'Malu', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('285', '920', '11', '1137', '南翔', 'Nanxiang', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('286', '920', '11', '1138', '桃浦新村', 'Taopu Xincun', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('287', '920', '11', '1139', '武威路', 'Wuwei Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('288', '920', '11', '1140', '祁连山路', 'Qilianshan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('289', '920', '11', '1141', '李子园', 'Liziyuan', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('290', '920', '11', '1142', '上海西站', 'West Shanghai Railwa', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('291', '920', '11', '1143', '真如', 'Zhenru', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('292', '920', '11', '1144', '枫桥路', 'Fengqiao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('293', '920', '11', '1145', '曹杨路', 'Caoyang Road', '0.000', '0.000', '0022', '500,1000,1500');
+INSERT INTO `station` VALUES ('294', '920', '11', '1146', '隆德路', 'Longde Road', '0.000', '0.000', '0042', '500,1000,1500');
+INSERT INTO `station` VALUES ('295', '920', '11', '1147', '江苏路', 'Jiangsu Road', '0.000', '0.000', '0023', '500,1000,1500');
+INSERT INTO `station` VALUES ('296', '920', '11', '1148', '交通大学', 'Jiao Tong University', '0.000', '0.000', '0009', '500,1000,1500');
+INSERT INTO `station` VALUES ('297', '920', '11', '1149', '徐家汇', 'Xujiahui', '0.000', '0.000', '0020', '500,1000,1500');
+INSERT INTO `station` VALUES ('298', '920', '11', '1150', '上海游泳馆', 'Shanghai Swimming Ce', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('299', '920', '11', '1151', '龙华', 'Longhua', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('300', '920', '11', '1152', '云锦路', 'Yunjin Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('301', '920', '11', '1153', '龙耀路', 'Longyao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('302', '920', '11', '1154', '东方体育中心', 'Oriental Sports Cent', '0.000', '0.000', '0006', '500,1000,1500');
+INSERT INTO `station` VALUES ('303', '920', '11', '1155', '三林', 'Sanlin', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('304', '920', '11', '1156', '三林东', 'East Sanlin', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('305', '920', '11', '1157', '浦三路', 'Pusan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('306', '920', '11', '1158', '严御路', 'Yanyu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('307', '920', '11', '1159', '御桥', 'Yuqiao', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('308', '920', '11', '1160', '罗山路', 'Luoshan Road', '0.000', '0.000', '0026', '500,1000,1500');
+INSERT INTO `station` VALUES ('309', '920', '12', '1236', '曲阜路', 'Qufu Road', '0.000', '0.000', '0021', '500,1000,1500');
+INSERT INTO `station` VALUES ('310', '920', '12', '1237', '天潼路', 'Tiantong Road', '0.000', '0.000', '0014', '500,1000,1500');
+INSERT INTO `station` VALUES ('311', '920', '12', '1238', '国际客运中心', 'International Cruise', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('312', '920', '12', '1239', '提篮桥', 'Tilan Qiao', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('313', '920', '12', '1240', '大连路', 'Dalian Road', '0.000', '0.000', '0013', '500,1000,1500');
+INSERT INTO `station` VALUES ('314', '920', '12', '1241', '江浦公园', 'Jiangpu Park', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('315', '920', '12', '1242', '宁国路', 'Ningguo Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('316', '920', '12', '1243', '隆昌路', 'Longchang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('317', '920', '12', '1244', '爱国路', 'Aiguo Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('318', '920', '12', '1245', '复兴岛', 'Fuxing Island', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('319', '920', '12', '1246', '东陆路', 'Donglu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('320', '920', '12', '1247', '巨峰路', 'Jufeng Road', '0.000', '0.000', '0017', '500,1000,1500');
+INSERT INTO `station` VALUES ('321', '920', '12', '1248', '杨高北路', 'North Yanggao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('322', '920', '12', '1249', '金京路', 'Jinjing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('323', '920', '12', '1250', '申江路', 'Shenjiang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('324', '920', '12', '1251', '金海路', 'Jinhai Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('325', '920', '13', '1321', '金运路', 'Jinyun Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('326', '920', '13', '1322', '金沙江西路', 'West Jinshajiang Roa', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('327', '920', '13', '1323', '丰庄', 'Fengzhuang', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('328', '920', '13', '1324', '祁连山南路', 'South Qilianshan Roa', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('329', '920', '13', '1325', '真北路', 'Zhengbei Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('330', '920', '13', '1326', '大渡河路', 'Daduhe Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('331', '920', '13', '1327', '金沙江路', 'Jinshajiang Road', '0.000', '0.000', '0037', '500,1000,1500');
+INSERT INTO `station` VALUES ('332', '920', '13', '1328', '隆德路', 'Longde Road', '0.000', '0.000', '0042', '500,1000,1500');
+INSERT INTO `station` VALUES ('333', '920', '13', '1329', '武宁路', 'Wuning Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('334', '920', '13', '1330', '长寿路', 'Changshou Road', '0.000', '0.000', '0039', '500,1000,1500');
+INSERT INTO `station` VALUES ('335', '920', '16', '1621', '龙阳路', 'Longyang Road', '0.000', '0.000', '0045', '500,1000,1500');
+INSERT INTO `station` VALUES ('336', '920', '16', '1622', '华夏中路', 'Middle Huaxia Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('337', '920', '16', '1623', '罗山路', 'Luoshan Road', '0.000', '0.000', '0026', '500,1000,1500');
+INSERT INTO `station` VALUES ('338', '920', '16', '1624', '周浦东', 'East Zhoupu', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('339', '920', '16', '1625', '鹤沙航城', 'Heshahangcheng', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('340', '920', '16', '1626', '航头东', 'East Hangtou', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('341', '920', '16', '1627', '新场', 'Xinchang', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('342', '920', '16', '1628', '野生动物园', 'Wild Animal Park', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('343', '920', '16', '1629', '惠南', 'Huinan', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('344', '920', '16', '1630', '惠南东', 'East Huinan', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('345', '920', '16', '1631', '书院', 'Shuyuan', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('346', '920', '16', '1632', '临港大道', 'Lingang Avenue', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('347', '920', '16', '1633', '滴水湖', 'Dishui lake', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('349', '﻿920', '00', '0001', '上海体育馆', 'Shanghai Indoor Stad', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('350', '920', '00', '0002', '上海南站', 'Shanghai South Railw', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('351', '920', '00', '0003', '上海火车站', 'Shanghai Railway Sta', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('352', '920', '00', '0004', '世纪大道', 'Century Avenue', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('353', '920', '00', '0005', '东安路', 'DongAn Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('354', '920', '00', '0006', '东方体育中心', 'Oriental Sports Cent', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('355', '920', '00', '0007', '中山公园', 'Zhongshan Park', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('356', '920', '00', '0008', '中潭路', 'Zhongtan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('357', '920', '00', '0009', '交通大学', 'Jiaotong university', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('358', '920', '00', '0010', '人民广场', 'People Square', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('359', '920', '00', '0011', '南京东路', 'East Nanjing Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('360', '920', '00', '0012', '四平路', 'Siping Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('361', '920', '00', '0013', '大连路', 'Dalian Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('362', '920', '00', '0014', '天潼路', 'Tiantong Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('363', '920', '00', '0015', '宜山路', 'Yishan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('364', '920', '00', '0016', '宝山路', 'Baoshan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('365', '920', '00', '0017', '巨峰路', 'Jufeng Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('366', '920', '00', '0018', '常熟路', 'Changshu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('367', '920', '00', '0019', '延安西路', 'West YanAn Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('368', '920', '00', '0020', '徐家汇', 'Xujiahui', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('369', '920', '00', '0021', '曲阜路', 'Qufu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('370', '920', '00', '0022', '曹杨路', 'Caoyang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('371', '920', '00', '0023', '江苏路', 'Jiangsu Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('372', '920', '00', '0024', '浦电路', 'Pudian Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('373', '920', '00', '0025', '海伦路', 'Hailun Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('374', '920', '00', '0026', '罗山路', 'Luoshan Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('375', '920', '00', '0027', '耀华路', 'Yaohua Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('376', '920', '00', '0028', '老西门', 'Laoximen', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('377', '920', '00', '0029', '肇嘉浜路', 'Zhaojiabang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('378', '920', '00', '0030', '莘庄', 'Xinzhuang', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('379', '920', '00', '0031', '蓝村路', 'Lancun Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('380', '920', '00', '0032', '虹口足球场', 'Hongkou Football Sta', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('381', '920', '00', '0033', '虹桥2号航站楼', 'Hongqiao Airport Ter', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('382', '920', '00', '0034', '虹桥火车站', 'Hongqiao Railway Sta', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('383', '920', '00', '0035', '虹桥路', 'Hongqiao Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('384', '920', '00', '0036', '西藏南路', 'South Xizang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('385', '920', '00', '0037', '金沙江路', 'Jinshajiang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('386', '920', '00', '0038', '镇坪路', 'Zhenping Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('387', '920', '00', '0039', '长寿路', 'Changshou Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('388', '920', '00', '0040', '陆家浜路', 'Lujiabang Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('389', '920', '00', '0041', '陕西南路', 'South Shanxi Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('390', '920', '00', '0042', '隆德路', 'Longde Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('391', '920', '00', '0043', '静安寺', 'JingAn Temple', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('392', '920', '00', '0044', '高科西路', 'West Gaoke Road', '0.000', '0.000', '', '500,1000,1500');
+INSERT INTO `station` VALUES ('393', '920', '00', '0045', '龙阳路', 'Longyang Road', '0.000', '0.000', '', '500,1000,1500');
+
+-- ----------------------------
+-- Table structure for `user`
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `age` int(11) DEFAULT NULL,
+  `userName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------

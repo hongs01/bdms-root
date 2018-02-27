@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0px;
+}
+/*菜单的样式表**/
+#menu ul li {
+	list-style: none;
+	line-height: 25px;
+	border-bottom: 1px solid #ccc;
+	background-color: #3967b1;
+	padding-left: 40px;
+	font-size: 12px;
+	font-weight: bold;
+	display: block;
+	width: auto;
+	cursor: pointer;
+}
+
+#menu ul li:HOVER {
+	background-color: #7ea7e8;
+}
+
+#menu ul li A {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#menu ul {
+	float: left;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	margin: 0px;
+	width: 100%;
+}
+
+.formul li {
+	list-style: none;
+	line-height: 35px;
+	width: 100%;
+}
+
+.formul  label {
+	display: block;
+	width: 120px;
+	float: left;
+}
+
+#sdssearchbox ul {
+	float: left;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-left: 10px;
+	margin: 0px;
+	width: 100%;
+}
+
+#sdssearchbox ul li {
+	list-style: none;
+	line-height: 35px;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#sdssearchbox label
+{
+	display: block;
+	font-weight: bold;
+	float: left;
+}
+
+#secondList{
+	width: 600px;
+}
